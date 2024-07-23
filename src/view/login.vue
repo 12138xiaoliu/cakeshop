@@ -68,111 +68,111 @@ const disabled = computed(() => {
 });
 </script>
 <style scoped>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-.Box {
-    background-color: aquamarine;
-    background-size: cover;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 550px;
-    height: 330px;
-    display: flex;
-}
+    .Box {
+        background-color: aquamarine;
+        background-size: cover;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 550px;
+        height: 330px;
+        display: flex;
+    }
 
-.left {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    background-color: rgba(57, 99, 134, 0.75);
-}
+    .left {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(57, 99, 134, 0.75);
+    }
 
-.right {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    background-color: rgb(240, 247, 194);
-}
+    .right {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        background-color: rgb(240, 247, 194);
+    }
 
-.right button {
-    width: 150px;
-    border-radius: 25px;
-}
+    .right button {
+        width: 150px;
+        border-radius: 25px;
+    }
 
-.centerBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    text-align: center;
-}
+    .centerBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        text-align: center;
+    }
 
-.left img {
-    width: 70%;
-    margin-bottom: 5px;
-}
+    .left img {
+        width: 70%;
+        margin-bottom: 5px;
+    }
 
-.left p {
-    font-size: 14px;
-    color: #fff;
-}
+    .left p {
+        font-size: 14px;
+        color: #fff;
+    }
 
-.left h4 {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
-}
+    .left h4 {
+        font-size: 18px;
+        color: #fff;
+        margin-bottom: 10px;
+    }
 
-.right form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    text-align: center;
-}
+    .right form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        text-align: center;
+    }
 
-h3 {
-    margin-bottom: 20px;
-}
+    h3 {
+        margin-bottom: 20px;
+    }
 
-input {
-    width: 100%;
-    height: 30px;
-    border: 1px solid #767676;
-    background-color: transparent;
-    font-size: 12px;
-    color: #000000;
-    margin-bottom: 15px;
-    outline: none;
-}
+    input {
+        width: 100%;
+        height: 30px;
+        border: 1px solid #767676;
+        background-color: transparent;
+        font-size: 12px;
+        color: #000000;
+        margin-bottom: 15px;
+        outline: none;
+    }
 
-.loginBtn {
-    width: 100%;
-    height: 100%;
-    line-height: 32px;
-    text-align: center;
-    font-size: 15px;
-    color: #fff;
-    border-radius: 3px;
-    background: rgb(57, 99, 134);
-    outline: none;
-    border: none;
-    margin-top: 10px;
-}
+    .loginBtn {
+        width: 100%;
+        height: 100%;
+        line-height: 32px;
+        text-align: center;
+        font-size: 15px;
+        color: #fff;
+        border-radius: 3px;
+        background: rgb(57, 99, 134);
+        outline: none;
+        border: none;
+        margin-top: 10px;
+    }
 
-.no {
-    cursor: pointer;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 12px;
-    color: #828282;
-}
+    .no {
+        cursor: pointer;
+        margin-top: 30px;
+        text-align: center;
+        font-size: 12px;
+        color: #828282;
+    }
 </style>
