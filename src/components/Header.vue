@@ -7,10 +7,10 @@
             <div>蛋糕系列</div>
             <div>零售糕点</div>
             <div>购物车</div>
-            <router-link to="/login">
+            <router-link class="my-link" to="/login" tag="button">
                 <div>登录注册</div>
             </router-link>
-            <div><router-link to="/city">城市</router-link></div>
+            <div><router-link class="my-link" to="/city" tag="span">城市</router-link></div>
         </div>
     </div>
     <div class="search">
@@ -38,20 +38,22 @@ const Router = useRouter()
         display: flex;
         height: 50px;
         width: 100%;
-        margin-left: 20%;
+        margin-top: 30px;
         background-color: transparent;
     }
 
     .nav span {
+        margin-top:10px;
         margin-bottom: 10px;
-        margin-left: 30px;
+        margin-left: 300px;
         font-family: 苍耳字体;
         font-size: 20px;
     }
 
     .navFunc {
         width: 800px;
-        margin-left: 30px;
+        margin-top: 10px;
+        margin-left: 10px;
         font-family: 苍耳字体;
         font-size: 30px;
         display: flex;
@@ -59,16 +61,15 @@ const Router = useRouter()
     }
 
     .search {
-        display: block;
-        margin: 10px;
-        margin-left: 30%;
-        width: 400px;
+        margin: 10px ;
+        margin-left: 200px;
+        width: 500px;
         align-content: center;
     }
 
     /* 设置默认的 router-link 链接颜色 */
-    .router-link {
-        color: #b44141;
+    .my-link {
+        color: #000000;
         /* 未激活时的颜色，例如深灰色 */
         text-decoration: none;
         /* 移除默认的下划线 */
