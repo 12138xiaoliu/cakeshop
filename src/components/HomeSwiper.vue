@@ -1,5 +1,5 @@
 <template>
-  <a-carousel autoplay>
+  <a-carousel autoplay dots="false">
     <div><img src="../static/Swiperimg/1.jpg"></div>
     <div><img src="../static/Swiperimg/2.jpg"></div>
     <div><img src="../static/Swiperimg/3.jpg"></div>
@@ -22,20 +22,19 @@
   .ant-carousel :deep(.slick-slide) {
     width: 200px;
     height: 400px;
-    background: #d3f6d5;
+    background: #0d0e0d;
     overflow:hidden;
     border-radius: 20px;
   }
 
   .ant-carousel :deep(.slick-slide div) {
     border-radius: 20px;
-    color: #0a0a0a;
+    background-color: #0a0a0a;
   } 
 
   .ant-carousel img{
       width: 100%;
       height: 100%;
       border-radius: 20px;
-      object-fit: cover;
   }
 </style>

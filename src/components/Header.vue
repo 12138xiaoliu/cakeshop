@@ -33,13 +33,13 @@ const Router = useRouter()
         font-weight: normal;
         font-style: normal;
     }
-
+    
     .nav {
         display: flex;
         height: 50px;
         width: 100%;
         margin-top: 30px;
-        background-color: transparent;
+        background-color:rgb(rgb(235, 248, 212), green, blue);
     }
 
     .nav span {

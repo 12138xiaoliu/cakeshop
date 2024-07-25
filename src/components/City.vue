@@ -1,8 +1,8 @@
 <template>
   <div class="city">
-    <a-cascader  v-model:value="value" :options="options" placeholder="选择省份" style="width:100%; background-color: aquamarine;" >
-      <!-- <template #suffixIcon><smile-outlined class="test" /></template> -->
-      <CloseOutlined />
+    <a-cascader  v-model:value="value" :options="options" placeholder="选择省份"  style="width:100%; " >
+       <template #suffixIcon><CloseSquareFilled /></template>
+       
     </a-cascader>
   </div>
   
@@ -10,7 +10,7 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import type { CascaderProps } from 'ant-design-vue';
-  // import {CloseOutlined} from 'ant-design-vue/icons-vue'
+  import { CloseSquareFilled } from '@ant-design/icons-vue';
   const options: CascaderProps['options'] = [
     {
       value: '全国',
@@ -59,3 +59,4 @@
     width: 500px;
   }
 </style>
+  

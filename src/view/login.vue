@@ -44,28 +44,28 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { reactive, computed } from 'vue';
-import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
-interface FormState {
-    username: string;
-    password: string;
-    remember: boolean;
-}
-const formState = reactive<FormState>({
-    username: '',
-    password: '',
-    remember: true,
-});
-const onFinish = (values: any) => {
-    console.log('Success:', values);
-};
+    import { reactive, computed } from 'vue';
+    import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
+    interface FormState {
+        username: string;
+        password: string;
+        remember: boolean;
+    }
+    const formState = reactive<FormState>({
+        username: '',
+        password: '',
+        remember: true,
+    });
+    const onFinish = (values: any) => {
+        console.log('Success:', values);
+    };
 
-const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-};
-const disabled = computed(() => {
-    return !(formState.username && formState.password);
-});
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
+    const disabled = computed(() => {
+        return !(formState.username && formState.password);
+    });
 </script>
 <style scoped>
     * {
@@ -116,18 +116,12 @@ const disabled = computed(() => {
 
     .left img {
         width: 70%;
-        margin-bottom: 5px;
+        margin: 10px;
     }
 
     .left p {
         font-size: 14px;
-        color: #fff;
-    }
-
-    .left h4 {
-        font-size: 18px;
-        color: #fff;
-        margin-bottom: 10px;
+        color: #060605;
     }
 
     .right form {

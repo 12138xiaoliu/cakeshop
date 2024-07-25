@@ -11,5 +11,7 @@ onMounted(() => {
 </script>
 
 <style>
- 
+ *{
+  background-color: rgb(222, 253, 213);
+ }
 </style>
