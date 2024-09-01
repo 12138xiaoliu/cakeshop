@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
         path: '/home', name: 'Home', component: Home,
     },
     { path: '/login', name: 'login', component: login },
-    { path: '/city', naem: 'city', component: city }
+    { path: '/city', name: 'city', component: city }
 ]
 const router = createRouter({
     history: createWebHistory(),
