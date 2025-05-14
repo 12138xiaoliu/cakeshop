@@ -11,30 +11,32 @@
 
 </script>
 <style scoped>
-  /* For demo */ 
-  .ant-carousel{
-    margin: 5px auto;
+  .ant-carousel {
+    margin: 50px auto; /* 调整上下间距，居中显示 */
     width: 800px;
     height: 400px;
-    border-radius: 20px;
+    border-radius: 20px; /* 圆角效果 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    overflow: hidden; /* 确保内容不溢出 */
   }
 
   .ant-carousel :deep(.slick-slide) {
-    width: 200px;
+    width: 100%; /* 确保滑块宽度适配容器 */
     height: 400px;
-    background: #0d0e0d;
-    overflow:hidden;
-    border-radius: 20px;
+    background: #f5f5f5; /* 更柔和的背景色 */
+    overflow: hidden;
+    border-radius: 20px; /* 圆角效果 */
   }
 
   .ant-carousel :deep(.slick-slide div) {
     border-radius: 20px;
-    background-color: #0a0a0a;
-  } 
+    background-color: #ffffff; /* 白色背景 */
+  }
 
-  .ant-carousel img{
-      width: 100%;
-      height: 100%;
-      border-radius: 20px;
+  .ant-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片自适应容器 */
+    border-radius: 20px; /* 圆角效果 */
   }
 </style>

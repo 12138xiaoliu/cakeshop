@@ -1,7 +1,7 @@
 <template>
-    <a-layout>
-        <a-layout-content>
-            <a-card title="注册">
+    <div class="register">
+        <div class="register-form">
+            <a-card title="注册" style="width: 400px;">
                 <a-form :model="formData" :rules="rules" ref="formRef">
                     <a-form-item label="用户名" name="username">
                         <a-input v-model:value="formData.username" />
@@ -13,12 +13,12 @@
                         <a-input-password v-model:value="formData.confirmPassword" />
                     </a-form-item>
                     <a-form-item>
-                        <a-button type="primary" @click="onSubmit">注册</a-button>
+                        <a-button type="primary" @click="onSubmit" style="text-align: center;">注册</a-button>
                     </a-form-item>
                 </a-form>
             </a-card>
-        </a-layout-content>
-    </a-layout>
+        </div>
+    </div>
 </template>
   
 <script lang="ts" setup>
@@ -66,4 +66,17 @@ const onSubmit = () => {
   
 <style scoped>
 /* 可以添加一些自定义样式 */
+    .register {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        /* height: 100vh; */
+        background-color: #f0f2f5;
+    }
+    .register-form {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
 </style>

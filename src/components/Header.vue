@@ -33,45 +33,45 @@ const Router = useRouter()
         font-weight: normal;
         font-style: normal;
     }
-    
+
     .nav {
         display: flex;
-        height: 50px;
+        align-items: center; /* 垂直居中 */
+        justify-content: space-between; /* 水平两端对齐 */
+        position: fixed; /* 固定到顶部 */
+        top: 0; /* 距离顶部 0 */
+        left: 0;
         width: 100%;
-        margin-top: 30px;
-        background-color:rgb(rgb(235, 248, 212), green, blue);
+        height: 60px; /* 调整高度 */
+        padding: 0 20px; /* 添加内边距 */
+        background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+        border-radius: 10px; /* 圆润风格 */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+        z-index: 1000; /* 确保导航栏在最上层 */
     }
 
     .nav span {
-        margin-top:10px;
-        margin-bottom: 10px;
-        margin-left: 300px;
         font-family: 苍耳字体;
-        font-size: 20px;
+        font-size: 24px; /* 调整字体大小 */
+        font-weight: bold; /* 加粗字体 */
     }
 
     .navFunc {
-        width: 800px;
-        margin-top: 10px;
-        margin-left: 10px;
-        font-family: 苍耳字体;
-        font-size: 30px;
         display: flex;
-        justify-content: space-between;
+        align-items: center; /* 垂直居中 */
+        gap: 20px; /* 添加间距 */
+        font-family: 苍耳字体;
+        font-size: 18px; /* 调整字体大小 */
     }
 
     .search {
-        margin: 10px ;
-        margin-left: 200px;
-        width: 500px;
+        margin: 0 auto; /* 居中对齐 */
+        width: 400px; /* 调整宽度 */
         align-content: center;
     }
 
-    /* 设置默认的 router-link 链接颜色 */
     .my-link {
-        color: #000000;
-        /* 未激活时的颜色，例如深灰色 */
-        text-decoration: none;
-        /* 移除默认的下划线 */
+        color: #000000; /* 未激活时的颜色，例如深灰色 */
+        text-decoration: none; /* 移除默认的下划线 */
     }
 </style>

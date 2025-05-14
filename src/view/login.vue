@@ -61,12 +61,13 @@ const formState = reactive<FormState>({
     remember: true,
 });
 const onFinish = (values: any) => {
-    console.log('表单提交成功事件触发,提交信息为：', values);
+    console.log('表单提交成功事件触发,提交信息为：', values);// 这里可以获取到表单的值
     if (values.remember) {
         let id = nanoid()
         localStorage.setItem(id, JSON.stringify({ username: values.username, password: values.password }))
     } else {
-
+        console.log("不记住密码")
+        localStorage.clear()
     }
     axios.post('http://localhost:8899/login', {
         username: values.username,

@@ -7,9 +7,7 @@ const city = () => import('../components/City.vue')
 const register = () => import('../view/register.vue')
 const routes: Array<RouteRecordRaw> = [
     { path: '/', name: 'default', component: login },
-    {
-        path: '/home', name: 'Home', component: Home,
-    },
+    {path: '/home', name: 'Home', component: Home,},
     { path: '/login', name: 'login', component: login },
     { path: '/register', name: 'register', component: register },
     { path: '/city', name: 'city', component: city }
