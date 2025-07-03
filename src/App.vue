@@ -16,8 +16,8 @@ onMounted(() => {
 
 <style>
 body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f8e1e7 0%, #e6dedb 100%);
+  /* 在 App.vue 或全局样式中添加 */
+  background-color: transparent !important;
   position: relative;
   overflow-x: hidden;
 }
@@ -82,7 +82,6 @@ body::cakeimg2 {
   border-radius: 50%;
 }
 #app {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
