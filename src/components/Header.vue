@@ -23,8 +23,6 @@ import { RouterLink, useRouter } from 'vue-router';
 const value = ref<string>('');
 const Router = useRouter()
 
-
-
 </script>
 <style scoped>
     @font-face {
@@ -65,6 +63,7 @@ const Router = useRouter()
     }
 
     .search {
+        top: 10px;
         margin: 0 auto; /* 居中对齐 */
         width: 400px; /* 调整宽度 */
         align-content: center;

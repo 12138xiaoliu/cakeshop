@@ -8,16 +8,14 @@
 </template>
 <script lang="ts" setup name="Home">
 import { onMounted ,ref} from 'vue'
-import goodList from './goodList.vue';
+import goodList from '../components/goodList.vue';
 import Header from '../components/Header.vue';
 import HomeSwiper from '../components/HomeSwiper.vue';
 import BackToTop from './BackToTop.vue';
-import { log } from 'console';
 
 // 滚动到顶部的函数
 const scrollToTop = () => {
     console.log("@@@");
-    
     // 滚动到页面顶部
     window.scrollTo({
       top: 0,

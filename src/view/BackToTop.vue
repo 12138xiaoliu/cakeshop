@@ -99,11 +99,11 @@ export default defineComponent({
     opacity: 1;
   }
   50% {
-    transform: translateY(-30px);
+    transform: translateY(-60px);
     opacity: 0.7;
   }
   100% {
-    transform: translateY(-50px);
+    transform: translateY(-150px);
     opacity: 0;
   }
 }

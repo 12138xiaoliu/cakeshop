@@ -2,11 +2,11 @@
   <div class="carousel-container">
     <a-carousel 
       autoplay
-      :dots=true
+      :dots="true"
       :autoplaySpeed="3000"
       ref="carouselRef"
-      @mouseenter="() => autoplay = false"
-      @mouseleave="() => autoplay = true"
+      @mouseenter="autoplay = false"
+      @mouseleave="autoplay = true"
     >
       <div 
         v-for="(img, index) in images" 
@@ -14,10 +14,10 @@
         class="slide-item"
         @click="handleImageClick(index)"
       >
-        <img :src=img :alt="'Slide ' + (index + 1)">
-        <!-- <div class="hover-overlay">
+        <img :src="getImageUrl(img)" :alt="'Slide ' + (index + 1)">
+        <div class="hover-overlay">
           <span class="go-to-text">GO TO!</span>
-        </div> -->
+        </div>
       </div>
       <template #customPaging="props">
         <div class="custom-dot" :class="{ 'active': props.current === props.i }"></div>
@@ -33,16 +33,22 @@ import type { CarouselProps } from 'ant-design-vue';
 const autoplay = ref(true);
 const carouselRef = ref<CarouselProps | null>(null);
 
+// 使用正确的图片路径
 const images = [
-  '../static/Swiperimg/1.jpg',
-  '../static/Swiperimg/2.jpg',
-  '../static/Swiperimg/3.jpg',
-  '../static/Swiperimg/4.jpg'
+  'Swiperimg/1.jpg',
+  'Swiperimg/2.jpg',
+  'Swiperimg/3.jpg',
+  'Swiperimg/4.jpg'
 ];
 
-// const customDots: CarouselProps['dots'] = {
-//   className: 'custom-dots-container'
-// };
+// 动态获取图片URL（适用于Vite）
+const getImageUrl = (path: string) => {
+  // Vite环境使用
+  return new URL(`../static/${path}`, import.meta.url).href;
+  
+  // 非Vite环境使用（如Vue CLI）：
+  // return require(`@/static/${path}`);
+};
 
 const handleImageClick = (index: number) => {
   console.log('点击了图片:', index + 1);
@@ -53,16 +59,17 @@ const handleImageClick = (index: number) => {
 <style scoped>
 .carousel-container {
   margin: 50px auto;
-  width: 800px;
+  width: 1200px;
   position: relative;
 }
 
 /* 弧形边框效果 */
 :deep(.ant-carousel) {
-  border-radius: 50% 50% 20px 20px / 30% 30% 20px 20px;
+  border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transform: perspective(500px) rotateX(1deg);
+  box-shadow: 0 10px 30px rgba(248, 224, 239, 0.897);
+  /* 景深效果 */
+  transform: perspective(600px) rotateX(1deg);
 }
 
 .slide-item {
@@ -70,28 +77,30 @@ const handleImageClick = (index: number) => {
   width: 100%;
   height: 400px;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .slide-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 /* 悬停效果 */
 .hover-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  top: 20%;
+  left: 90%;
+  border-radius: 8px;
+  background: rgba(199, 226, 252, 0.918);
   opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease;
+  padding: 10px 20px;
+  transform: translate(-50%, -50%);
 }
 
 .slide-item:hover .hover-overlay {
@@ -100,15 +109,15 @@ const handleImageClick = (index: number) => {
 
 .slide-item:hover img {
   transform: scale(1.05);
+  filter: brightness(0.9);
 }
 
 /* 艺术字体样式 */
 .go-to-text {
   font-family: 'Arial', sans-serif;
-  font-size: 3rem;
-  font-weight: 900;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  font-weight: 100;
+  color: rgb(248, 163, 113);
   letter-spacing: 2px;
   transform: rotate(-5deg);
   opacity: 0.9;
@@ -122,11 +131,11 @@ const handleImageClick = (index: number) => {
 }
 
 /* 自定义原点导航 */
-:deep(.custom-dots-container) {
+:deep(.slick-dots) {
   bottom: -30px;
 }
 
-:deep(.custom-dots-container li) {
+:deep(.slick-dots li) {
   margin: 0 5px;
 }
 
@@ -142,9 +151,39 @@ const handleImageClick = (index: number) => {
 }
 
 .custom-dot.active {
-  background: #1890ff;
-  border-color: #1890ff;
+  background: #ff6700;
+  border-color: #ff6700;
   opacity: 1;
   transform: scale(1.2);
+}
+
+/* 响应式设计 */
+@media (max-width: 1250px) {
+  .carousel-container {
+    width: 95%;
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    margin: 30px auto;
+    width: 95%;
+  }
+  
+  .slide-item {
+    height: 300px;
+  }
+  
+  .hover-overlay {
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .go-to-text {
+    font-size: 1.5rem;
+  }
 }
 </style>
