@@ -4,6 +4,7 @@
       v-if="isVisible"
       class="back-to-top"
       @click="handleClick"
+      :class="{ 'animate': isAnimating }"
     >
       <!-- <svg xmlns="src\static\logo" viewBox="0 0 24 24" class="arrow-icon">
         <path d="M12 4l-8 8h5v8h6v-8h5z"/>
@@ -22,14 +23,23 @@ export default defineComponent({
   name: 'BackToTop',
   emits: ['click'],
   setup(props, { emit }) {
+    //动画效果触发标志
+    const isAnimating = ref(false);
+    //组件是否可见
     const isVisible = ref(false);
-
+    
+    //检测网页滑块是否大于300px，修改组件是否可见
     const checkScroll = () => {
       isVisible.value = window.scrollY > 300;
     };
 
     const handleClick = () => {
-      emit('click');
+      isAnimating.value=true
+      emit('click')
+            // 动画结束后重置状态
+      setTimeout(() => {
+        isAnimating.value = false;
+      }, 500);
     };
 
     onMounted(() => {
@@ -41,6 +51,7 @@ export default defineComponent({
     });
 
     return {
+      isAnimating,
       isVisible,
       handleClick
     };
@@ -64,6 +75,47 @@ export default defineComponent({
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 999;
+}
+
+.back-to-top:hover {
+  background-color: rgba(245, 87, 39, 0.8);
+  transform: translateY(-5px);
+}
+
+.back-to-top svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+/* 点击动画 */
+.back-to-top.animate {
+  animation: floatUp 0.5s ease forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+/* 淡入淡出动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 /* 其他样式保持不变... */
 </style>

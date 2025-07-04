@@ -3,15 +3,27 @@
         <Header></Header>
         <HomeSwiper></HomeSwiper>
         <goodList></goodList>
-        <BackToTop></BackToTop>
+        <BackToTop @click="scrollToTop"></BackToTop>
     </div>
 </template>
 <script lang="ts" setup name="Home">
-import { onMounted } from 'vue'
+import { onMounted ,ref} from 'vue'
 import goodList from './goodList.vue';
 import Header from '../components/Header.vue';
 import HomeSwiper from '../components/HomeSwiper.vue';
 import BackToTop from './BackToTop.vue';
+import { log } from 'console';
+
+// 滚动到顶部的函数
+const scrollToTop = () => {
+    console.log("@@@");
+    
+    // 滚动到页面顶部
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 onMounted(() => {
     console.log("进入首页");
 })
