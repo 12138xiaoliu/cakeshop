@@ -1,6 +1,7 @@
 <template>
     <div class="nav">
         <Header></Header>
+        <Search></Search> 
         <HomeSwiper></HomeSwiper>
         <goodList></goodList>
         <BackToTop @click="scrollToTop"></BackToTop>
@@ -12,7 +13,7 @@ import goodList from '../components/goodList.vue';
 import Header from '../components/Header.vue';
 import HomeSwiper from '../components/HomeSwiper.vue';
 import BackToTop from './BackToTop.vue';
-
+import Search from '@/components/Search.vue';
 // 滚动到顶部的函数
 const scrollToTop = () => {
     console.log("@@@");
@@ -26,4 +27,5 @@ onMounted(() => {
     console.log("进入首页");
 })
 </script>
-<style ></style>
+<style >
+</style>
