@@ -16,10 +16,18 @@
 </template>
 
 <script setup lang="ts" name="Header">
-import { ref } from 'vue'
+import { ref ,onMounted} from 'vue'
 import { RouterLink, useRouter } from 'vue-router';
+import {useHaderStore} from '@/store/HeaderStore'
+const HaderStroreData=useHaderStore()
 const value = ref<string>('');
 const Router = useRouter()
+onMounted(()=>{
+    console.log("@@@");
+    console.log(HaderStroreData);
+    
+
+})
 </script>
 
 <style scoped>

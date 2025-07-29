@@ -6,12 +6,8 @@
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { RouterView, useRouter } from 'vue-router';
-onMounted(() => {
-  // 进入系统后自动跳转到登陆页面
-  const Router = useRouter()
-  Router.push('/')
-})
+import { RouterView, } from 'vue-router';
+
 </script>
 
 <style>

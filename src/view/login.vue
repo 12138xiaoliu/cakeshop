@@ -44,11 +44,14 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { reactive, computed } from 'vue';
+import { reactive, computed , onMounted } from 'vue';
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
 import { nanoid } from 'nanoid';
 import { useRouter } from 'vue-router';
 import axios from 'axios'
+onMounted(() => {
+  console.log(`挂载钩子，页面重定向到注册页面`)
+})
 const Router = useRouter()
 interface FormState {
     username: string;
@@ -97,9 +100,12 @@ function toRegister() {
 const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
 };
+
 const disabled = computed(() => {
     return !(formState.username && formState.password);
 });
+
+
 </script>
 <style scoped>
 * {

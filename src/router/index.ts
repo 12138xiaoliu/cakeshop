@@ -5,13 +5,16 @@ const Home = () => import('../view/Home.vue')
 const login = () => import('../view/login.vue')
 const city = () => import('../components/City.vue')
 const register = () => import('../view/register.vue')
+//路由规则
 const routes: Array<RouteRecordRaw> = [
-    { path: '/', name: 'default', component: login },
+    {path:'/',redirect:'/login'},
+    {path: '/', name: 'default', component: login },
     {path: '/home', name: 'Home', component: Home,},
     { path: '/login', name: 'login', component: login },
     { path: '/register', name: 'register', component: register },
     { path: '/city', name: 'city', component: city }
 ]
+//路由模式
 const router = createRouter({
     history: createWebHistory(),
     routes
