@@ -10,7 +10,13 @@
             <router-link class="my-link" to="/login" tag="button">
                 <div>登录注册</div>
             </router-link>
-            <div><router-link class="my-link" to="/city" tag="span">城市</router-link></div>
+            <div>
+                <!-- 添加城市显示 -->
+                <span class="my-link" @click="openCityModal">
+                  <environment-outlined style="margin-right: 5px;" />
+                  {{ currentCity }}
+                </span>
+            </div>
         </div>
     </div>
 </template>
@@ -20,13 +26,34 @@ import { ref ,onMounted} from 'vue'
 import { RouterLink, useRouter } from 'vue-router';
 import {useHaderStore} from '@/store/HeaderStore'
 const HaderStroreData=useHaderStore()
+// 当前城市状态
+const currentCity = ref('城市')
+// 打开城市选择弹窗的方法
+const openCityModal = () => {
+    const event = new CustomEvent('open-city-modal', { detail: true })
+    window.dispatchEvent(event)
+}
+
+// 监听城市更新事件
+onMounted(() => {
+  // 从本地存储获取上次选择的城市
+  const savedCity = localStorage.getItem('currentCity');
+  if (savedCity) {
+    currentCity.value = savedCity;
+  }
+  
+  window.addEventListener('update-city', (e: any) => {
+    currentCity.value = e.detail;
+    // 保存到本地存储
+    localStorage.setItem('currentCity', e.detail);
+  })
+})
+
 const value = ref<string>('');
 const Router = useRouter()
 onMounted(()=>{
     console.log("@@@");
-    console.log(HaderStroreData);
-    
-
+    console.log(HaderStroreData);   
 })
 </script>
 
@@ -60,7 +87,7 @@ onMounted(()=>{
         font-family: 苍耳字体;
         font-size: 26px; /* 增大字体 */
         font-weight: bold;
-        color: #e63946; /* 添加品牌色 */
+        color: #333; /* 添加品牌色 */
     }
 
     .navFunc {
@@ -90,6 +117,6 @@ onMounted(()=>{
     }
 
     .my-link:hover {
-        color: #e63946; /* 使用品牌色 */
+        color: #568bff; /* 使用品牌色 */
     }
 </style>

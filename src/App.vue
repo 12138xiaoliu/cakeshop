@@ -5,7 +5,7 @@
   
 </template>
 <script setup lang="ts">
-import { onMounted } from 'vue';
+
 import { RouterView, } from 'vue-router';
 
 </script>
@@ -77,6 +77,23 @@ body::cakeimg2 {
   pointer-events: none;
   border-radius: 50%;
 }
+/* 添加弹窗的全局遮罩样式 */
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* 弹窗标题样式 */
+.ant-modal-title {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 在 App.vue 的全局样式中 */
+.ant-modal {
+  top: 20vh !important;
+}
+
 #app {
   display: flex;
   justify-content: center;

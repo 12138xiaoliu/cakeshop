@@ -4,6 +4,7 @@ import router from '@/router'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
 import {createPinia} from 'pinia'
+import { EnvironmentOutlined } from '@ant-design/icons-vue';
 //创建pinia
 const pinia=createPinia();
 const app = createApp(App)
@@ -11,4 +12,5 @@ const app = createApp(App)
 app.use(pinia)
 app.use(router)
 app.use(Antd)
+app.component('EnvironmentOutlined', EnvironmentOutlined);
 app.mount('#app')

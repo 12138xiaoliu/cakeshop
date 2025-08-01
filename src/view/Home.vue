@@ -5,6 +5,7 @@
         <HomeSwiper></HomeSwiper>
         <goodList></goodList>
         <BackToTop @click="scrollToTop"></BackToTop>
+        <City></City>
     </div>
 </template>
 <script lang="ts" setup name="Home">
@@ -14,6 +15,7 @@ import Header from '../components/Header.vue';
 import HomeSwiper from '../components/HomeSwiper.vue';
 import BackToTop from './BackToTop.vue';
 import Search from '@/components/Search.vue';
+import City from '@/components/City.vue';
 // 滚动到顶部的函数
 const scrollToTop = () => {
     console.log("@@@");
