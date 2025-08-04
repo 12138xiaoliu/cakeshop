@@ -5,7 +5,7 @@ const Home = () => import('../view/Home.vue')
 const login = () => import('../view/login.vue')
 const ErrorRedirect = () => import('../view/404.vue')
 const register = () => import('../view/register.vue')
-
+const GOodDetail = () => import('../view/GoodDetail.vue')
 //路由规则
 const routes: Array<RouteRecordRaw> = [
     { path: '/', redirect: '/login' },
@@ -13,7 +13,9 @@ const routes: Array<RouteRecordRaw> = [
     { path: '/home', name: 'Home', component: Home, },
     { path: '/login', name: 'login', component: login },
     { path: '/register', name: 'register', component: register },
+    { path: '/goodDetail', name: 'GoodDetail', component: GOodDetail },
     { path: '/404', name: '404', component: ErrorRedirect },
+
     {
         path: '/:pathMatch(.*)*',
         component: ErrorRedirect
