@@ -2,7 +2,6 @@
   <div>
     <div class="left">
       <div class="imgbox">
-        <img src= alt="">
       </div>
     </div>
     <div class="right">

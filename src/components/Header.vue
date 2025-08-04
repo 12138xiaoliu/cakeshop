@@ -8,7 +8,7 @@
             <div>零售糕点</div>
             <div>购物车</div>
             <router-link class="my-link" to="/login" tag="button">
-                <div>登录注册</div>
+                <div>登录</div>
             </router-link>
             <div>
                 <!-- 添加城市显示 -->

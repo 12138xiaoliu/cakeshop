@@ -100,5 +100,6 @@ body::cakeimg2 {
   align-items: center;
   position: relative;
   z-index: 1;
+  overflow: visible;
 }
 </style>
